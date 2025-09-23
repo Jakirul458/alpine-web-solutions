@@ -1,8 +1,10 @@
 import { ChevronDown, Check } from 'lucide-react';
 import { useState } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { elementRef, isVisible } = useScrollAnimation();
 
   const faqs = [
     {
@@ -49,7 +51,10 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section 
+      ref={elementRef}
+      className={`py-16 bg-muted/30 scroll-slide-up ${isVisible ? 'animate' : ''}`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* FAQ Section */}
@@ -64,10 +69,10 @@ const FAQ = () => {
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="bg-card rounded-xl border border-border/50 overflow-hidden shadow-soft"
+                  className="bg-card rounded-xl border border-border/50 overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 hover-lift"
                 >
                   <button
-                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-accent/50 transition-colors"
+                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-accent/50 transition-colors hover-scale"
                     onClick={() => toggleFAQ(index)}
                   >
                     <span className="font-medium text-alpine-gray pr-4">
@@ -105,8 +110,8 @@ const FAQ = () => {
 
             <div className="space-y-6">
               {whyChooseUs.map((item, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-6 h-6 bg-alpine-success rounded-full flex items-center justify-center mt-1">
+                <div key={index} className="flex items-start space-x-4 hover-lift">
+                  <div className="flex-shrink-0 w-6 h-6 bg-alpine-success rounded-full flex items-center justify-center mt-1 hover-scale">
                     <Check className="h-4 w-4 text-white" />
                   </div>
                   <div>
@@ -122,7 +127,7 @@ const FAQ = () => {
             </div>
 
             {/* CTA Image/Illustration */}
-            <div className="mt-8 bg-gradient-primary rounded-2xl p-8 text-center text-white">
+            <div className="mt-8 bg-gradient-primary rounded-2xl p-8 text-center text-white hover-lift hover-glow">
               <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🚀</span>
               </div>

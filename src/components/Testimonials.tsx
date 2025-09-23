@@ -1,9 +1,11 @@
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { elementRef, isVisible } = useScrollAnimation();
 
   const testimonials = [
     {
@@ -38,7 +40,10 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 bg-background">
+    <section 
+      ref={elementRef}
+      className={`py-16 bg-background scroll-slide-up ${isVisible ? 'animate' : ''}`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -59,7 +64,7 @@ const Testimonials = () => {
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
-              className="rounded-full border-primary/20 hover:border-primary hover:bg-primary hover:text-white"
+              className="rounded-full border-primary/20 hover:border-primary hover:bg-primary hover:text-white hover-scale"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -80,7 +85,7 @@ const Testimonials = () => {
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
-              className="rounded-full border-primary/20 hover:border-primary hover:bg-primary hover:text-white"
+              className="rounded-full border-primary/20 hover:border-primary hover:bg-primary hover:text-white hover-scale"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -89,7 +94,7 @@ const Testimonials = () => {
           {/* Current Testimonial */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Testimonial Card */}
-            <div className="bg-gradient-card rounded-2xl p-8 shadow-medium border border-border/50">
+            <div className="bg-gradient-card rounded-2xl p-8 shadow-medium border border-border/50 hover-lift">
               {/* Stars */}
               <div className="flex space-x-1 mb-4">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
@@ -124,7 +129,7 @@ const Testimonials = () => {
                 .filter((_, index) => index !== currentIndex)
                 .slice(0, 2)
                 .map((testimonial, index) => (
-                  <div key={index} className="bg-card rounded-xl p-6 shadow-soft border border-border/30">
+                  <div key={index} className="bg-card rounded-xl p-6 shadow-soft border border-border/30 hover-lift">
                     <div className="flex items-center space-x-3 mb-3">
                       <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center text-white text-sm font-semibold">
                         {testimonial.name.split(' ').map(n => n[0]).join('')}

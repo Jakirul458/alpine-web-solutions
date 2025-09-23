@@ -1,9 +1,15 @@
 import { Button } from '@/components/ui/button';
 import heroIllustration from '@/assets/hero-illustration.png';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Hero = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+
   return (
-    <section className="relative overflow-hidden bg-gradient-hero min-h-[600px] flex items-center">
+    <section 
+      ref={elementRef}
+      className={`relative overflow-hidden bg-gradient-hero min-h-[600px] flex items-center scroll-slide-up ${isVisible ? 'animate' : ''}`}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-white/5" style={{
@@ -25,10 +31,10 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" variant="secondary" className="text-alpine-blue font-semibold">
+              <Button size="lg" variant="secondary" className="text-alpine-blue font-semibold hover-lift">
                 Get a Free Quote
               </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover-scale">
                 Book a Consultation
               </Button>
             </div>
@@ -48,7 +54,7 @@ const Hero = () => {
 
           {/* Illustration */}
           <div className="relative">
-            <div className="relative z-10">
+            <div className="relative z-10 hover-scale">
               <img
                 src={heroIllustration}
                 alt="Alpine WebS - Web Development Services"
@@ -56,8 +62,8 @@ const Hero = () => {
               />
             </div>
             {/* Floating Elements */}
-            <div className="absolute top-10 -left-4 w-16 h-16 bg-alpine-warning/20 rounded-full blur-xl animate-pulse"></div>
-            <div className="absolute bottom-10 -right-4 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+            <div className="absolute top-10 -left-4 w-16 h-16 bg-alpine-warning/20 rounded-full blur-xl animate-pulse hover-glow"></div>
+            <div className="absolute bottom-10 -right-4 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse delay-1000 hover-glow"></div>
           </div>
         </div>
       </div>

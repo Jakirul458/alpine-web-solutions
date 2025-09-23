@@ -1,6 +1,9 @@
 import { Code, Smartphone, TrendingUp, Headphones } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Features = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+
   const features = [
     {
       icon: <Code className="h-8 w-8" />,
@@ -25,7 +28,10 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
+    <section 
+      ref={elementRef}
+      className={`py-16 bg-background scroll-slide-up ${isVisible ? 'animate' : ''}`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -44,7 +50,7 @@ const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-gradient-card rounded-2xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105 border border-border/50"
+              className="group bg-gradient-card rounded-2xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover-lift border border-border/50"
             >
               <div className="mb-4">
                 <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
@@ -58,7 +64,7 @@ const Features = () => {
                 {feature.description}
               </p>
               <div className="mt-4">
-                <button className="text-primary font-medium text-sm hover:text-primary-dark transition-colors">
+                <button className="text-primary font-medium text-sm hover:text-primary-dark transition-colors hover-scale">
                   Learn More →
                 </button>
               </div>

@@ -1,7 +1,9 @@
 import { Calendar, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Products = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
   const products = [
     {
       title: 'Lab Management Software',
@@ -38,7 +40,10 @@ const Products = () => {
   ];
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section 
+      ref={elementRef}
+      className={`py-16 bg-muted/30 scroll-slide-up ${isVisible ? 'animate' : ''}`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -57,7 +62,7 @@ const Products = () => {
           {products.map((product, index) => (
             <div
               key={index}
-              className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-strong transition-all duration-300 hover:scale-105 border border-border/50"
+              className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-strong transition-all duration-300 hover-lift border border-border/50"
             >
               {/* Product Image */}
               <div className="relative h-48 bg-gradient-primary overflow-hidden">
@@ -97,7 +102,7 @@ const Products = () => {
                   {product.description}
                 </p>
 
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary-dark p-0 h-auto font-medium">
+                <Button variant="ghost" size="sm" className="text-primary hover:text-primary-dark p-0 h-auto font-medium hover-scale">
                   Read More →
                 </Button>
               </div>

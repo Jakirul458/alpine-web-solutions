@@ -9,8 +9,10 @@ import {
   Settings 
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Services = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
   const services = [
     {
       icon: <Globe className="h-12 w-12" />,
@@ -55,7 +57,10 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section 
+      ref={elementRef}
+      className={`py-16 bg-muted/30 scroll-slide-up ${isVisible ? 'animate' : ''}`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -76,7 +81,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-card rounded-2xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105 border border-border/50"
+              className="group bg-card rounded-2xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover-lift border border-border/50"
             >
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-medium">
@@ -92,7 +97,7 @@ const Services = () => {
                 {service.description}
               </p>
               
-              <Button variant="ghost" size="sm" className="text-primary hover:text-primary-dark p-0 h-auto font-medium">
+              <Button variant="ghost" size="sm" className="text-primary hover:text-primary-dark p-0 h-auto font-medium hover-scale">
                 Read More →
               </Button>
             </div>
@@ -101,7 +106,7 @@ const Services = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button size="lg" className="shadow-medium">
+          <Button size="lg" className="shadow-medium hover-lift">
             More Services
           </Button>
         </div>

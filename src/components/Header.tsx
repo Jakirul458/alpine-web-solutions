@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import SocialMediaDropdown from '@/components/SocialMediaDropdown';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,14 +24,16 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AW</span>
+            <SocialMediaDropdown>
+              <div className="flex items-center space-x-2 hover-glow">
+                <div className="h-8 w-8 bg-gradient-primary rounded-lg flex items-center justify-center hover-scale">
+                  <span className="text-white font-bold text-sm">AW</span>
+                </div>
+                <span className="text-xl font-bold text-alpine-gray">
+                  Alpine WebS
+                </span>
               </div>
-              <span className="text-xl font-bold text-alpine-gray">
-                Alpine WebS
-              </span>
-            </Link>
+            </SocialMediaDropdown>
           </div>
 
           {/* Desktop Navigation */}
@@ -39,7 +42,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-colors hover:text-primary hover-scale ${
                   isActive(item.href)
                     ? 'text-primary'
                     : 'text-alpine-gray-light hover:text-alpine-gray'
@@ -52,13 +55,13 @@ const Header = () => {
 
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            <Button size="sm" className="hidden sm:inline-flex">
+            <Button size="sm" className="hidden sm:inline-flex hover-lift">
               Get a Quote
             </Button>
             
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 rounded-md text-alpine-gray-light hover:text-alpine-gray hover:bg-accent"
+              className="md:hidden p-2 rounded-md text-alpine-gray-light hover:text-alpine-gray hover:bg-accent hover-scale"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -68,13 +71,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden animate-slide-up">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border/40">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  className={`block px-3 py-2 rounded-md text-base font-medium hover-lift ${
                     isActive(item.href)
                       ? 'text-primary bg-accent'
                       : 'text-alpine-gray-light hover:text-alpine-gray hover:bg-accent'
@@ -85,7 +88,7 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button size="sm" className="w-full">
+                <Button size="sm" className="w-full hover-lift">
                   Get a Quote
                 </Button>
               </div>

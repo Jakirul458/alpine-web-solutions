@@ -1,7 +1,9 @@
 import aboutIllustration from '@/assets/about-illustration.png';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const About = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
   const stats = [
     { number: '150+', label: 'Satisfied Clients' },
     { number: '200+', label: 'Websites Developed' },
@@ -10,7 +12,10 @@ const About = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
+    <section 
+      ref={elementRef}
+      className={`py-16 bg-background scroll-slide-up ${isVisible ? 'animate' : ''}`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -57,13 +62,13 @@ const About = () => {
               </div>
             </div>
 
-            <Button size="lg" className="shadow-medium">
+            <Button size="lg" className="shadow-medium hover-lift">
               More Information
             </Button>
           </div>
 
           {/* Illustration */}
-          <div className="relative">
+          <div className="relative hover-scale">
             <img
               src={aboutIllustration}
               alt="Alpine WebS Team"
@@ -75,7 +80,7 @@ const About = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-border">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
+            <div key={index} className="text-center hover-scale">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 {stat.number}
               </div>
