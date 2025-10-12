@@ -43,11 +43,11 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-6 pt-8 text-blue-100">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-alpine-warning rounded-full"></div>
-                <span>+1 (555) 123-4567</span>
+                <span>+91 6294527072</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-alpine-warning rounded-full"></div>
-                <span>New York, USA</span>
+                <span>Kolkata, India</span>
               </div>
             </div>
           </div>
@@ -73,11 +73,11 @@ const Hero = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
             <div>
-              <div className="text-2xl font-bold">150+</div>
+              <div className="text-2xl font-bold">10+</div>
               <div className="text-sm opacity-90">Happy Clients</div>
             </div>
             <div>
-              <div className="text-2xl font-bold">200+</div>
+              <div className="text-2xl font-bold">15+</div>
               <div className="text-sm opacity-90">Projects Completed</div>
             </div>
             <div>

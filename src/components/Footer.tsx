@@ -8,7 +8,7 @@ const Footer = () => {
   const { elementRef, isVisible } = useScrollAnimation();
 
   return (
-    <footer 
+    <footer
       ref={elementRef}
       className={`bg-alpine-gray text-white scroll-slide-up ${isVisible ? 'animate' : ''}`}
     >
@@ -17,14 +17,19 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2 hover-scale">
-              <div className="h-10 w-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">AW</span>
-              </div>
+              {/* Logo Image */}
+              <img
+                src="/alpine-logo.jpeg"
+                alt="Alpine WebS Logo"
+                className="h-10 w-10 object-contain rounded-lg"
+              />
+              {/* Logo Text */}
               <span className="text-xl font-bold">Alpine WebS</span>
             </div>
-            
+
+
             <p className="text-gray-300 leading-relaxed">
-              At Alpine WebS, we specialize in delivering custom web and software solutions designed to meet the evolving needs of businesses. 
+              At Alpine WebS, we specialize in delivering custom web and software solutions designed to meet the evolving needs of businesses.
               We provide exclusive web and software solutions that change and grow with the challenges of today's digital world.
             </p>
 
@@ -32,7 +37,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span className="text-gray-300">New York, USA</span>
+                <span className="text-gray-300">Kolkata, India</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
@@ -40,7 +45,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+91 6294527072</span>
               </div>
             </div>
           </div>
@@ -76,10 +81,10 @@ const Footer = () => {
             <p className="text-gray-300 mb-4">
               Subscribe to our newsletter for the latest updates and tech insights.
             </p>
-            
+
             <div className="flex space-x-2 mb-6">
-              <Input 
-                placeholder="Enter your email" 
+              <Input
+                placeholder="Enter your email"
                 className="bg-alpine-gray-light/20 border-alpine-gray-light/30 text-white placeholder:text-gray-400"
               />
               <Button size="sm" className="bg-primary hover:bg-primary-dark hover-lift">
@@ -91,16 +96,16 @@ const Footer = () => {
             <div>
               <h4 className="font-medium mb-3">Follow Us</h4>
               <div className="flex space-x-3">
-                <a href="#" className="w-10 h-10 bg-alpine-gray-light/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover-scale">
+                <a href="https://www.facebook.com/alan.jacky369/" className="w-10 h-10 bg-alpine-gray-light/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover-scale">
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a href="#" className="w-10 h-10 bg-alpine-gray-light/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover-scale">
                   <Twitter className="h-5 w-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-alpine-gray-light/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover-scale">
+                <a href="https://www.instagram.com/_alan_jacky_/" className="w-10 h-10 bg-alpine-gray-light/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover-scale">
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-alpine-gray-light/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover-scale">
+                <a href="https://www.linkedin.com/in/jakirul458/" className="w-10 h-10 bg-alpine-gray-light/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover-scale">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </div>
@@ -123,7 +128,7 @@ const Footer = () => {
           <div className="text-gray-400 text-sm mb-4 sm:mb-0">
             © 2025 Alpine WebS. All rights reserved
           </div>
-          
+
           <div className="flex space-x-6 text-sm">
             <Link to="/privacy" className="text-gray-400 hover:text-primary transition-colors hover-scale">Privacy Policy</Link>
             <Link to="/terms" className="text-gray-400 hover:text-primary transition-colors hover-scale">Terms of Service</Link>

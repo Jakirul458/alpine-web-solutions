@@ -5,10 +5,10 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const About = () => {
   const { elementRef, isVisible } = useScrollAnimation();
   const stats = [
-    { number: '150+', label: 'Satisfied Clients' },
-    { number: '200+', label: 'Websites Developed' },
-    { number: '100+', label: 'Software Developed' },
-    { number: '50+', label: 'Skilled Team Members' },
+    { number: '10+', label: 'Satisfied Clients' },
+    { number: '15+', label: 'Websites Developed' },
+    { number: '5+', label: 'Software Developed' },
+    { number: '10+', label: 'Skilled Team Members' },
   ];
 
   return (

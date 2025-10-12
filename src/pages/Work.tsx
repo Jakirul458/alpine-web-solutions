@@ -7,62 +7,89 @@ import { ExternalLink, Play } from 'lucide-react';
 const Work = () => {
   const projects = [
     {
-      title: 'Focus Diagnostic Center',
-      category: 'Healthcare',
-      description: 'Comprehensive diagnostic center website with appointment booking, test results portal, and patient management system.',
+      title: 'Golden Future Supportive Trust',
+      category: 'Finance',
+      description: 'Financial services website with user savings and loan accounts. Users can deposit and withdraw money with real-time email notifications and EMI tracking. Branch managers can manage users, accounts, transactions, and generate reports.',
       image: '/api/placeholder/600/400',
-      technologies: ['React', 'Node.js', 'MySQL', 'Stripe'],
+      technologies: ['React', 'Node.js', 'MongoDB', 'Node Mailer SMTP'],
       status: 'Live',
-      url: '#',
+      url: 'https://gfst.vercel.app/',
     },
     {
-      title: 'Science Hub Academy',
-      category: 'Education',
-      description: 'Educational institution website with course management, student portal, and online learning management system.',
+      title: 'HLCCT Foundation',
+      category: 'NGO',
+      description: 'Official website for a non-profit organization focused on community welfare and education. It includes sections for campaigns, donations, volunteer registration, and event updates, all managed through a simple admin dashboard.',
       image: '/api/placeholder/600/400',
-      technologies: ['WordPress', 'PHP', 'MySQL', 'LMS'],
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express.js'],
       status: 'Live',
-      url: '#',
+      url: 'https://hlcct.vercel.app/',
     },
     {
-      title: 'Kachian Darul Uloom Madrasha',
-      category: 'Education',
-      description: 'Religious educational institution website with course information, admission system, and event management.',
+      title: 'ShaandJ Music',
+      category: 'E-Commerce',
+      description: 'An online platform for DJs and music producers to showcase and sell albums. Features include digital album purchases, secure payment integration, user authentication, and an admin panel to manage music listings and sales.',
       image: '/api/placeholder/600/400',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP'],
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
       status: 'Live',
-      url: '#',
+      url: 'https://shaandj.vercel.app/',
     },
-    {
-      title: 'City Path Lab',
-      category: 'Healthcare',
-      description: 'Pathology laboratory website with online test booking, report delivery, and lab management system.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'Express.js', 'MongoDB', 'AWS'],
-      status: 'Live',
-      url: '#',
-    },
-    {
-      title: 'E-commerce Fashion Store',
-      category: 'E-commerce',
-      description: 'Complete online fashion store with inventory management, payment processing, and order tracking.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Shopify', 'Liquid', 'JavaScript', 'PayPal'],
-      status: 'Live',
-      url: '#',
-    },
-    {
-      title: 'Restaurant Management App',
-      category: 'Hospitality',
-      description: 'Restaurant management system with online ordering, table booking, and kitchen management.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Flutter', 'Firebase', 'Node.js', 'Square'],
-      status: 'In Development',
-      url: '#',
-    },
+    // {
+    //   title: 'Focus Diagnostic Center',
+    //   category: 'Healthcare',
+    //   description: 'Comprehensive diagnostic center website with appointment booking, test results portal, and patient management system.',
+    //   image: '/api/placeholder/600/400',
+    //   technologies: ['React', 'Node.js', 'MySQL', 'Stripe'],
+    //   status: 'Live',
+    //   url: '#',
+    // },
+    // {
+    //   title: 'Science Hub Academy',
+    //   category: 'Education',
+    //   description: 'Educational institution website with course management, student portal, and online learning management system.',
+    //   image: '/api/placeholder/600/400',
+    //   technologies: ['WordPress', 'PHP', 'MySQL', 'LMS'],
+    //   status: 'Live',
+    //   url: '#',
+    // },
+    // {
+    //   title: 'Kachian Darul Uloom Madrasha',
+    //   category: 'Education',
+    //   description: 'Religious educational institution website with course information, admission system, and event management.',
+    //   image: '/api/placeholder/600/400',
+    //   technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP'],
+    //   status: 'Live',
+    //   url: '#',
+    // },
+    // {
+    //   title: 'City Path Lab',
+    //   category: 'Healthcare',
+    //   description: 'Pathology laboratory website with online test booking, report delivery, and lab management system.',
+    //   image: '/api/placeholder/600/400',
+    //   technologies: ['React', 'Express.js', 'MongoDB', 'AWS'],
+    //   status: 'Live',
+    //   url: '#',
+    // },
+    // {
+    //   title: 'E-commerce Fashion Store',
+    //   category: 'E-commerce',
+    //   description: 'Complete online fashion store with inventory management, payment processing, and order tracking.',
+    //   image: '/api/placeholder/600/400',
+    //   technologies: ['Shopify', 'Liquid', 'JavaScript', 'PayPal'],
+    //   status: 'Live',
+    //   url: '#',
+    // },
+    // {
+    //   title: 'Restaurant Management App',
+    //   category: 'Hospitality',
+    //   description: 'Restaurant management system with online ordering, table booking, and kitchen management.',
+    //   image: '/api/placeholder/600/400',
+    //   technologies: ['Flutter', 'Firebase', 'Node.js', 'Square'],
+    //   status: 'In Development',
+    //   url: '#',
+    // },
   ];
 
-  const categories = ['All', 'Healthcare', 'Education', 'E-commerce', 'Hospitality'];
+  const categories = ['All', 'Healthcare', 'Education', 'E-commerce', 'NGO', 'Finance', ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -76,7 +103,7 @@ const Work = () => {
                 Our Work
               </h1>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                Discover our portfolio of successful projects across various industries. 
+                Discover our portfolio of successful projects across various industries.
                 Each project represents our commitment to quality, innovation, and client satisfaction.
               </p>
             </div>
@@ -120,7 +147,7 @@ const Work = () => {
                         <div className="text-sm font-medium opacity-90">View Project</div>
                       </div>
                     </div>
-                    
+
                     {/* Status Badge */}
                     <div className="absolute top-4 left-4">
                       <Badge variant={project.status === 'Live' ? 'default' : 'secondary'}>
@@ -181,7 +208,7 @@ const Work = () => {
               Ready to Start Your Project?
             </h2>
             <p className="text-alpine-gray-light max-w-2xl mx-auto mb-8">
-              Let's discuss your project requirements and create something amazing together. 
+              Let's discuss your project requirements and create something amazing together.
               We're here to bring your vision to life with cutting-edge technology and creative solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -20,7 +20,7 @@ const Contact = () => {
                 Contact Us
               </h1>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                Ready to transform your digital presence? Let's work together to create something amazing. 
+                Ready to transform your digital presence? Let's work together to create something amazing.
                 Get in touch with our team to discuss your project.
               </p>
             </div>
@@ -105,12 +105,13 @@ const Contact = () => {
                           <SelectValue placeholder="Select your budget range" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="under-5k">Under $5,000</SelectItem>
-                          <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
-                          <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
-                          <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
-                          <SelectItem value="over-50k">Over $50,000</SelectItem>
+                          <SelectItem value="under-5k">Under ₹5,000</SelectItem>
+                          <SelectItem value="5k-10k">₹5,000 - ₹10,000</SelectItem>
+                          <SelectItem value="10k-25k">₹10,000 - ₹25,000</SelectItem>
+                          <SelectItem value="25k-50k">₹25,000 - ₹50,000</SelectItem>
+                          <SelectItem value="over-50k">Over ₹50,000</SelectItem>
                         </SelectContent>
+
                       </Select>
                     </div>
 
@@ -136,7 +137,7 @@ const Contact = () => {
                       <label className="text-sm font-medium text-alpine-gray mb-2 block">
                         Project Description *
                       </label>
-                      <Textarea 
+                      <Textarea
                         placeholder="Tell us about your project, goals, and any specific requirements..."
                         rows={5}
                       />
@@ -157,7 +158,7 @@ const Contact = () => {
                     Get in Touch
                   </h3>
                   <p className="text-alpine-gray-light mb-8">
-                    We're here to help you succeed. Choose the most convenient way to reach us, 
+                    We're here to help you succeed. Choose the most convenient way to reach us,
                     and we'll respond promptly to assist with your project needs.
                   </p>
                 </div>
@@ -191,7 +192,7 @@ const Contact = () => {
                           <h4 className="font-semibold text-alpine-gray mb-1">Call Us</h4>
                           <p className="text-alpine-gray-light mb-2">Monday to Friday, 9 AM to 6 PM</p>
                           <a href="tel:+15551234567" className="text-primary hover:text-primary-dark font-medium">
-                            +1 (555) 123-4567
+                            +91 6294527072
                           </a>
                         </div>
                       </div>
@@ -208,10 +209,19 @@ const Contact = () => {
                           <h4 className="font-semibold text-alpine-gray mb-1">Visit Us</h4>
                           <p className="text-alpine-gray-light mb-2">Our office location</p>
                           <p className="text-primary font-medium">
-                            New York, NY 10001<br />
-                            United States
+                                                    
+                            <a
+                              href="https://www.google.com/maps/search/?api=1&query=662Q%2B4WH"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline"
+                            >
+                              Click to view location 
+                            </a>
                           </p>
                         </div>
+
+
                       </div>
                     </CardContent>
                   </Card>
@@ -243,7 +253,7 @@ const Contact = () => {
                       For urgent matters or immediate assistance, don't hesitate to call us directly.
                     </p>
                     <Button variant="secondary" size="sm">
-                      Call Now: +1 (555) 123-4567
+                      Call Now: +91 6294527072
                     </Button>
                   </CardContent>
                 </Card>
