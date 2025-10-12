@@ -7,29 +7,44 @@ const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { elementRef, isVisible } = useScrollAnimation();
 
-  const testimonials = [
-    {
-      name: 'Abdul Matin',
-      title: 'Director of Focus Diagnostic Center',
-      image: '/api/placeholder/80/80',
-      rating: 5,
-      content: 'I engaged Alpine WebS and IT Services for the website design and digital management of my public school, Science Hub Academy. Their exceptional skill, forward-thinking approach, and dedication have profoundly improved our overall Management, enhancing efficiency and service delivery. I highly recommend their expertise.',
-    },
-    {
-      name: 'Noushad Ali Sarkar',
-      title: 'Kochian Uzul Uloom Nijamio Madrasha - Secretary',
-      image: '/api/placeholder/80/80',
-      rating: 5,
-      content: 'Our Kachian Darul Uloom Nijamia Madrasha - A Contribution with Alpine WebS for their outstanding work on our website design. Their team showed remarkable expertise, creativity, and commitment, providing us with a visually appealing and highly functional site that exceeded our expectations.',
-    },
-    {
-      name: 'Sarah Johnson',
-      title: 'Founder of Science Hub Academy',
-      image: '/api/placeholder/80/80',
-      rating: 5,
-      content: 'I took website design and digital management support from Alpine WebS and IT Services for Our Institute, Bes An Noor. Their exceptional expertise and dedication have greatly enhanced our Activity. I highly recommend them for their outstanding service across all our branches.',
-    },
-  ];
+const testimonials = [
+  {
+    name: 'Safiur Rahaman',
+    title: 'Golden Future Supportive Trust',
+    image: '/api/placeholder/80/80',
+    rating: 5,
+    content: 'We engaged Alpine WebS for our financial services website. The team delivered a professional platform with real-time notifications, EMI tracking, and an easy-to-manage admin panel. Their expertise and responsiveness exceeded our expectations.',
+  },
+  {
+    name: 'Anisur Rahaman',
+    title: 'Golden Future Supportive Trust',
+    image: '/api/placeholder/80/80',
+    rating: 5,
+    content: 'Alpine WebS provided an exceptional website solution for our financial operations. The platform is highly functional, and the team was responsive and professional throughout the project.',
+  },
+  {
+    name: 'Ayub Sk',
+    title: 'Golden Future Supportive Trust',
+    image: '/api/placeholder/80/80',
+    rating: 5,
+    content: 'The website developed by Alpine WebS is user-friendly, efficient, and easy to manage. Their expertise and support made the entire process smooth and reliable.',
+  },
+  {
+    name: 'Kausik Biswas',
+    title: 'HLCCT Foundation (NGO)',
+    image: '/api/placeholder/80/80',
+    rating: 5,
+    content: 'Alpine WebS created our official NGO website with an easy-to-manage admin dashboard for campaigns, donations, volunteers, and events. Their attention to detail and support made the project seamless and highly effective.',
+  },
+  {
+    name: 'Mohammed Nabi Mansoor',
+    title: 'ShaandJ Music',
+    image: '/api/placeholder/80/80',
+    rating: 5,
+    content: 'Alpine WebS developed our e-commerce music platform with secure payments, user authentication, and a full admin panel. The site is visually appealing, functional, and easy to manage. Their professionalism is unmatched.',
+  },
+];
+
 
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
@@ -52,8 +67,7 @@ const Testimonials = () => {
             What Our Clients Are Raving About!
           </h2>
           <p className="text-alpine-gray-light max-w-3xl mx-auto">
-            Alpine WebS and Software has impressed every client with their remarkable attention to detail, seamless communication, 
-            and ability to turn visions into reality, making them the go-to partner for innovative and reliable IT services.
+            Alpine WebS has helped clients across industries achieve their goals with professional, reliable, and visually impressive websites and platforms.
           </p>
         </div>
 
@@ -93,21 +107,17 @@ const Testimonials = () => {
 
           {/* Current Testimonial */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Testimonial Card */}
             <div className="bg-gradient-card rounded-2xl p-8 shadow-medium border border-border/50 hover-lift">
-              {/* Stars */}
               <div className="flex space-x-1 mb-4">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-alpine-warning text-alpine-warning" />
                 ))}
               </div>
 
-              {/* Content */}
               <p className="text-alpine-gray-light leading-relaxed mb-6 italic">
                 "{testimonials[currentIndex].content}"
               </p>
 
-              {/* Author */}
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-semibold">
                   {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('')}
@@ -123,7 +133,6 @@ const Testimonials = () => {
               </div>
             </div>
 
-            {/* Additional Testimonial Preview */}
             <div className="space-y-6">
               {testimonials
                 .filter((_, index) => index !== currentIndex)

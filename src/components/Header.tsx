@@ -58,7 +58,7 @@
 //             <Button size="sm" className="hidden sm:inline-flex hover-lift">
 //               Get a Quote
 //             </Button>
-            
+
 //             {/* Mobile menu button */}
 //             <button
 //               className="md:hidden p-2 rounded-md text-alpine-gray-light hover:text-alpine-gray hover:bg-accent hover-scale"
@@ -162,11 +162,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary hover-scale ${
-                  isActive(item.href)
+                className={`text-sm font-medium transition-colors hover:text-primary hover-scale ${isActive(item.href)
                     ? 'text-primary'
                     : 'text-alpine-gray-light hover:text-alpine-gray'
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -175,9 +174,11 @@ const Header = () => {
 
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            <Button size="sm" className="hidden sm:inline-flex hover-lift">
-              Get a Quote
-            </Button>
+            <Link to="/contact">
+              <Button size="sm" className="hidden sm:inline-flex hover-lift">
+                Get a Quote
+              </Button>
+            </Link>
 
             {/* Mobile menu button */}
             <button
@@ -197,11 +198,10 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium hover-lift ${
-                    isActive(item.href)
+                  className={`block px-3 py-2 rounded-md text-base font-medium hover-lift ${isActive(item.href)
                       ? 'text-primary bg-accent'
                       : 'text-alpine-gray-light hover:text-alpine-gray hover:bg-accent'
-                  }`}
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

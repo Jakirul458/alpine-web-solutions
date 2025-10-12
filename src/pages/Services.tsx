@@ -1,17 +1,18 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { 
-  Globe, 
-  Code2, 
-  Shield, 
-  Smartphone, 
-  Search, 
-  ShoppingCart, 
-  TrendingUp, 
+import {
+  Globe,
+  Code2,
+  Shield,
+  Smartphone,
+  Search,
+  ShoppingCart,
+  TrendingUp,
   Settings,
   CheckCircle
 } from 'lucide-react';
+import { Link} from 'react-router-dom';
 
 const Services = () => {
   const services = [
@@ -125,7 +126,7 @@ const Services = () => {
                 Our Services
               </h1>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                Comprehensive digital solutions tailored to your business needs. From web development to digital marketing, 
+                Comprehensive digital solutions tailored to your business needs. From web development to digital marketing,
                 we provide end-to-end services that drive growth and success.
               </p>
             </div>
@@ -147,7 +148,7 @@ const Services = () => {
                         {service.icon}
                       </div>
                     </div>
-                    
+
                     <div className="flex-1">
                       <h3 className="text-2xl font-semibold text-alpine-gray mb-3">
                         {service.title}
@@ -221,12 +222,18 @@ const Services = () => {
               Let's discuss your requirements and create a customized solution that perfectly fits your business needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="shadow-medium">
-                Get Free Consultation
-              </Button>
-              <Button size="lg" variant="outline">
-                View Our Portfolio
-              </Button>
+
+              <Link to="/contact">
+                <Button size="sm" className="hidden sm:inline-flex hover-lift">
+                  Get Free Consultation
+                </Button>
+              </Link>
+              <a href="https://jakirulsk.vercel.app" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline">
+                  View Our Portfolio
+                </Button>
+              </a>
+
             </div>
           </div>
         </section>

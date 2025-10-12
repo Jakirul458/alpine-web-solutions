@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import aboutIllustration from '@/assets/about-illustration.png';
 import { CheckCircle, Users, Award, Clock } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const About = () => {
   const features = [
@@ -137,13 +138,17 @@ const About = () => {
               Let's discuss your project requirements and create a customized solution that drives results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="shadow-medium">
-                Start Your Project
-              </Button>
-              <Button size="lg" variant="outline">
-                Schedule Consultation
-              </Button>
-            </div>
+  <Link to="/contact">
+    <Button size="lg" className="shadow-medium">
+      Start Your Project
+    </Button>
+  </Link>
+  <Link to="/contact">
+    <Button size="lg" variant="outline">
+      Schedule Consultation
+    </Button>
+  </Link>
+</div>
           </div>
         </section>
       </main>
