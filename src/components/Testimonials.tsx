@@ -34,7 +34,7 @@ const testimonials = [
     title: 'Human Life Care Charitable Trust (NGO)',
     image: '/api/placeholder/80/80',
     rating: 5,
-    content: 'I’m very happy with the website created by alpinewebs.in for our NGO. The team was friendly, professional, and always ready to help. The design looks excellent, the service was smooth, and communication was clear throughout. Fully satisfied and highly recommend them!',
+    content: 'I’m very happy with the website created by Alpine Web Solutions for our Human Life Care Charitable Trust (NGO). The team was friendly, professional, and always ready to help. The design looks excellent, the service was smooth, and communication was clear throughout. Fully satisfied and highly recommend them!',
   },
   {
     name: 'Mohammed Nabi Mansoor',
