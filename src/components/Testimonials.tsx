@@ -31,10 +31,10 @@ const testimonials = [
   },
   {
     name: 'Kausik Biswas',
-    title: 'HLCCT Foundation (NGO)',
+    title: 'Human Life Care Charitable Trust (NGO)',
     image: '/api/placeholder/80/80',
     rating: 5,
-    content: 'Alpine WebS created our official NGO website with an easy-to-manage admin dashboard for campaigns, donations, volunteers, and events. Their attention to detail and support made the project seamless and highly effective.',
+    content: 'I’m very happy with the website created by alpinewebs.in for our NGO. The team was friendly, professional, and always ready to help. The design looks excellent, the service was smooth, and communication was clear throughout. Fully satisfied and highly recommend them!',
   },
   {
     name: 'Mohammed Nabi Mansoor',
